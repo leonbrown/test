@@ -13,7 +13,7 @@ pipeline {
         stage('Greeting') {
             steps {
                 sh '''
-                echo "Hello, class"
+                echo "Hello, class!"
                 '''
             }
         }
