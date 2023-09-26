@@ -1,9 +1,20 @@
 pipeline {
-    agent { docker { image 'maven:3.8.4-openjdk-11-slim' } }
+    agent any
     stages {
-        stage('build') {
+        stage('Freestyle Copy') {
             steps {
-                sh 'mvn --version'
+                sh '''
+                echo "Hello, jenkins is working"
+                chmod +x hello.sh
+                ./hello.sh
+                '''
+            }
+        }
+        stage('Greeting') {
+            steps {
+                sh '''
+                echo "Hello, class"
+                '''
             }
         }
     }
